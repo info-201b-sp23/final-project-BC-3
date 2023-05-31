@@ -3,7 +3,7 @@
 
 Authors: Your names here
 
-**Link: Link to your Shiny App here**
+**[Link: Link to Our Shiny App here](https://minsol.shinyapps.io/final-project-BC-3/)**
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
