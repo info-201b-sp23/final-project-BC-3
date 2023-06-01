@@ -31,11 +31,11 @@ my_theme <- bs_theme(
 
 
 Intro_tab <- tabPanel("Introduction",
-                      h1("Depression Demogrphic of college students", align="center", id = "1"),
+                      h1("Depression Demographic of college students", align="center", id = "1"),
                       img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center"),
                       h3("Introduction", id = "introduction"),
                       p("1. Does the severity of depression vary based on demographic on gender?", align = "center", id = "q1"),
-                      p("2. WHat is the relationship between anxiety, depression and sleepiness with different school grade? ", align = "center", id = "q2"),
+                      p("2. What is the relationship between anxiety, depression and sleepiness with different school grade? ", align = "center", id = "q2"),
                       p("3. Do depression levels vary based on the grade level of college students?", align = "center", id = "q3"),
                       p(" These research questions are motivated by the need to understand the distribution of depression among college students. Depression is a common mental health issue that impacts a lot of the population. A high rate of depression is among young adults, especially college students. The questions provide significant information about particular demographics and grades that are most affected by depression and whether the severity of depression varies based on demographics on gender. This information can be helpful in understanding which demographic group is the most affected by depression and how mental health services can better provide their services. The research question also includes whether depression levels vary based on the grade level of college students. This question could help us identify the key factors that contribute to depression and find an approach that could help the students. Overall having this information will help identify the specific groups that require more in-depth treatment and support. These questions are important and relate to our data set and answer important questions individuals may have about the dataset.
 ", id = "intro_p"),
@@ -55,7 +55,7 @@ Intro_tab <- tabPanel("Introduction",
                       p("As the data includes sensitive information about mental health, the privacy and confidentiality of the participants must be respected.", id = "da_p2"),
                       p(" However, this data may have some limitations. First, the dataset is based on undergraduate students from some parts of Lahore University, so it does not represent more university students. Thus, the results of this data are limited in terms of generalization. Similarly, due to the limited sample size, it may be insufficient to detect stronger results and subtle, detailed patterns. If the sample size were larger, more accurate results could be obtained. Furthermore, if other important variables that may affect the relationship between depression and academic/social behaviours were included, more positive results could be obtained. The dataset only includes data on depression and anxiety, which are complex mental health conditions that a wide range of factors can influence. Without a more comprehensive set of variables, it may be difficult to predict or diagnose depression and anxiety accurately. The data is self-reported, which means that the accuracy of the information may be influenced by factors such as social desirability bias, recall bias, or misunderstanding of the questions. For example, information on whether participants in this dataset had received treatment for depression or anxiety and what type of treatment they had received is not included. If such features had been included, effective research on various treatment methods could have been conducted.", id = "da_p3"),
                       
-                      h3("Implicaition", id = "im"),
+                      h3("Implication", id = "im"),
                       p("Through the demographics that we learned from our research, it is possible for the experts to develop a better environment for college students. Many students suffer from depression, and knowing the demographic of college students will help in designing and implementing the interventions that can support students’ mental health. Different technological methods can be applied to classify more deeply the severity of depression, anxiety, and other mental disorders. It will help to identify the common patterns that can inform the targeted interventions. The policymakers can use the information from the study to inform existing policies and programs that are focused on promoting mental health and depression in colleges. It can also provide a base for new policies and programs that can help with students’ mental health. All of the implications will lead to better mental health outcomes for college students and make a huge contribution to each of the student’s academic success and overall health.", id = "im_p"),
                       
                       h3("Limitations", id = "lim"),
@@ -216,7 +216,7 @@ conclusion_tab <- tabPanel("Conclusion",
 
 ui <- navbarPage(
   theme = my_theme,
-  "Depression Demogrphic of college students",
+  "Depression Demographic of college students",
   Intro_tab,
   chart1_tab,
   char2_tab,
