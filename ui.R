@@ -27,7 +27,6 @@ intro_tab <- tabPanel("Information",
                       img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center")
 )
 
-# Create a selectInput widget for selecting gender
 gender_widget <-
   selectInput(
     inputId = "gender",
@@ -60,7 +59,7 @@ chart1_tab <- tabPanel(
   )
 )
 
-char2_sidepanel <- sidebarPanel(
+char2_siderpanel <- sidebarPanel(
   h3("Options for graph"),
   selectInput(inputId = "type",
               label = h4("Select Type of Score"),
@@ -70,13 +69,12 @@ char2_sidepanel <- sidebarPanel(
   checkboxGroupInput(inputId = "year", 
                      label = h4("Select School Year"), 
                      choices = c("School year 1" = "1", 
-                                    "School year 2" = "2", 
-                                    "School year 3" = "3",
-                                    "School year 4" = "4"),
+                                 "School year 2" = "2", 
+                                 "School year 3" = "3",
+                                 "School year 4" = "4"),
                      selected = c("1", "2"))
-  )
+)
 
-  
 char2_mainpanel <- mainPanel(
   plotlyOutput(outputId = "char2"),
   br(),
@@ -106,8 +104,22 @@ char2_mainpanel <- mainPanel(
 
 char2_tab <- tabPanel("Epworth, GAD, PHQ Scores",
                       h2("Average Epworth, GAD, PHQ Scores for Each School Year"),
-                      char2_sidepanel,
-                      char2_mainpanel
+                      char2_siderpanel,
+                      char2_mainpanel)
+
+
+
+chart3_widget <- selectInput("school", 
+                             "School Year", 
+                             choices = unique(df$school_year), 
+                             selected = "All")
+
+chart3_mainpanel <- mainPanel(
+  plotlyOutput("chart3"),
+  p("The chart attempts to answer the distribution of depression severity across different school years."),
+  p("It provides a visual representation of the proportion of each severity type ( mild, moderate, severe etc.) within a selected school year."),
+  p("The chart helps analyze how depression severity varies across different school years and provides interactivity by showing the exact proportion of each severity type when hovering over a slice."),
+  p("By selecting a specific school year using the sidebar input, the chart dynamically updates to display the distribution of severity types for that year.")
 )
 
 chart3_tab <- tabPanel("Depression Severity by School Year",
@@ -117,22 +129,6 @@ chart3_tab <- tabPanel("Depression Severity by School Year",
                          chart3_mainpanel
                        ))
 
-
-chart3_widget <- selectInput("school", 
-                             "School Year", 
-                             choices = unique(df$school_year), 
-                             selected = "All")
-
-
-chart3_mainpanel <- mainPanel(
-    plotlyOutput("chart3"),
-    p("The chart attempts to answer the distribution of depression severity across different school years."),
-    p("It provides a visual representation of the proportion of each severity type ( mild, moderate, severe etc.) within a selected school year."),
-    p("The chart helps analyze how depression severity varies across different school years and provides interactivity by showing the exact proportion of each severity type when hovering over a slice."),
-    p("By selecting a specific school year using the sidebar input, the chart dynamically updates to display the distribution of severity types for that year.")
-  )
-                      
-
 ui <- navbarPage(
   "Depression Demogrphic of college students",
   intro_tab,
@@ -140,4 +136,3 @@ ui <- navbarPage(
   char2_tab,
   chart3_tab
 )
-

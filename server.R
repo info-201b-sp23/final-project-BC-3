@@ -28,7 +28,7 @@ server <- function(input, output) {
   })
   
   output$char2 <- renderPlotly({
-
+    
     mean_of_each_score <- df %>% 
       group_by(school_year) %>% 
       summarize(Epworth_score = mean(epworth_score, na.rm = TRUE), 
