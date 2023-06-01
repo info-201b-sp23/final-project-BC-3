@@ -1,9 +1,17 @@
-# Title of Your Final Project Here 
-## INFO 201 "Foundational Skills for Data Science" — Winter 2023
+# Depression Demogrphic of college students
+## INFO 201 "Foundational Skills for Data Science" — Spring 2023
 
-Authors: Your names here
+Authors: 
 
-**Link: Link to your Shiny App here**
+Jessica Seok: jseok@uw.edu
+
+Ivy Kim: minsol32@uw.edu
+
+Elroe Yayiso: elroeyayiso123@gmail.com
+
+Nathalie Ellena Jonathan: nathjo@uw.edu
+
+**[Link: Link to Our Shiny App here](https://minsol.shinyapps.io/final-project-BC-3/)**
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
