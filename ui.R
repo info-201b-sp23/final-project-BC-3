@@ -30,7 +30,7 @@ my_theme <- bs_theme(
 ) %>% bs_add_rules(sass::sass_file("style.scss"))
 
 
-Intro_tab <- tabPanel("Depression in College Students",
+Intro_tab <- tabPanel("Introduction",
                       img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center"),
                       h3("Introduction", id = "introduction"),
                       p("1. Does the severity of depression vary based on demographic on gender?", align = "center", id = "q1"),
@@ -156,10 +156,28 @@ chart3_widget <- selectInput("school",
 
 chart3_mainpanel <- mainPanel(
   plotlyOutput("chart3"),
-  p(" This pie chart shows the relation between schoolyear and depression severity that was observed in University of Lahore. The purpose of this chart is to calculate various summary statistics for the depression severity variable grouped by the school years. This chart helps to view easier vizualization with the data set.The chart attempts to answer the distribution of depression severity across different school years By analyzing the pue chart, we can gain insights into how the count of depression severity is distributed across different school years, identify any potential patterns or variations, and understand the relationship between these variables. The chart helps analyze how depression severity varies across different school years and provides interactivity by showing the exact proportion of each severity type when hovering over a slice. In the provided chart, we can observe six distinct levels of depression severity: ‘Mild’, ‘Moderate’, ‘Moderately severe’, ‘None’, ‘None-minimal’, and ‘Severe’.
-
-Insights: I noticed that the severity of mild depression is consistently high across all school years, particularly among freshmen. Additionally, moderate depression is also most prevalent among freshman students.Furthermore, moderately severe depression is also highest among freshmen, indicating that this group experiences the greatest severity of depression, with a value of 20. However, when we look through the moderately severe and severe values, freshman has 8.73, sophomore as 7.81, juniors at  2.854 and seniors as 6.248. Through this we can see students suffer most in freshman, and sophomore, followed ny seniors."). 
-)
+  p(" This pie chart shows the relation between schoolyear and depression severity 
+    that was observed in University of Lahore. The purpose of this chart is to 
+    calculate various summary statistics for the depression severity variable 
+    grouped by the school years. This chart helps to view easier vizualization 
+    with the data set.The chart attempts to answer the distribution of depression 
+    severity across different school years By analyzing the pue chart, we can gain 
+    insights into how the count of depression severity is distributed across 
+    different school years, identify any potential patterns or variations, and 
+    understand the relationship between these variables. The chart helps analyze 
+    how depression severity varies across different school years and provides 
+    interactivity by showing the exact proportion of each severity type when 
+    hovering over a slice. In the provided chart, we can observe six distinct 
+    levels of depression severity: ‘Mild’, ‘Moderate’, ‘Moderately severe’, ‘None’, ‘
+    None-minimal’, and ‘Severe’. Insights: I noticed that the severity of mild 
+    depression is consistently high across all school years, particularly among 
+    freshmen. Additionally, moderate depression is also most prevalent among 
+    freshman students.Furthermore, moderately severe depression is also highest 
+    among freshmen, indicating that this group experiences the greatest severity
+    of depression, with a value of 20. However, when we look through the moderately 
+    severe and severe values, freshman has 8.73, sophomore as 7.81, juniors at  
+    2.854 and seniors as 6.248. Through this we can see students suffer most in 
+    freshman, and sophomore, followed ny seniors."))
 
 chart3_tab <- tabPanel("Depression Severity by School Year",
                        h1("Distrivution of Depression Severity by Selected School Year.", align="center"),
@@ -169,6 +187,27 @@ chart3_tab <- tabPanel("Depression Severity by School Year",
                          chart3_mainpanel
                        ))
 
+conclusion_tab <- tabPanel("Conclusion",
+                           h1("Conclusion"),
+                           br(),
+                           h3("1. Takeaways"),
+                           img(src = "chart1.png", height = '300px', width = '600px', align = "center"),
+                           p(""),
+                           p("The bar graph about gender and depression severity reveals several takeaways regarding the relationship between gender and depression severity. From the graph, we can see that there are more females who experience mild, moderate, and moderately severe levels of depression compared to males. This suggests that females are more prone to depression compared to males. There might be some factors related to this result, including earlier puberty in females, hormone differences, and other factors. Additionally, the graph also shows that there are a higher number of males who experience none and none-minimal depression severity compared to females. This indicates that more males experience low to no depression at all. In conclusion, these takeaways emphasise that, in general, female has a higher chance of experiencing depression compared to male."),
+                           br(),
+                           h3("2. Takeaways"),
+                           img(src = "chart2.png", height = '300px', width = '600px', align = "center"),
+                           p(""),
+                           p("In conclusion, the bar chart that compares average Epworth, GAD, and PHQ scores for each school year from the University of Lahore provides several key takeaways. First, it shows that the second school year consistently exhibits the highest scores for Epworth (sleepiness), GAD (anxiety), and PHQ (depression). The first year also demonstrates relatively high scores, while years 3 and 4 display lower scores. This indicates that students in the earlier grades may experience more sleep issues, increased depression, and higher anxiety compared to their peers in later years. Furthermore, the chart reveals a positive relationship between the Epworth, GAD, and PHQ scores. Overall, 
+                           these takeaways emphasise the importance of addressing sleep, depression, and anxiety concerns, especially for students in the first and second school years."),
+                           br(),
+                           h3("3. Takeaways"),
+                           img(src = "chart3.png", height = '300px', width = '600px', align = "center"),
+                           p(""),
+                           p("The analysis of the pie charts reveals several key takeaways regarding the relationship between school years and depression severity among students at the University of Lahore. Firstly, freshman students consistently exhibit higher levels of depression severity compared to other school years. This finding emphasises the need for targeted mental health support and resources during the critical transition period from high school to university. Secondly, the prevalence of depression severity decreases as students progress through their school years, indicating the potential positive impact of becoming more familiar with the university environment and academic demands. Recognising the relationship between school year and depression severity can inform tailored interventions and support systems. Overall, these insights underscore the necessity for universities to prioritise mental health initiatives, provide early interventions for freshmen, and establish ongoing support throughout students' academic journeys."),
+                           h3("Broader implications"),
+                           p("The analysis reveals important insights about depression among college students at the University of Lahore. Freshman students exhibit higher depression severity, highlighting the need for targeted support during the transition period. As students progress, depression prevalence decreases, emphasizing the impact of becoming familiar with university life. Additionally, females are more prone to depression, highlighting the necessity for tailored interventions. These findings underscore the importance of prioritizing mental health, providing early interventions, and establishing ongoing support systems for students.")
+                           )
 
 
 
@@ -180,7 +219,8 @@ ui <- navbarPage(
   Intro_tab,
   chart1_tab,
   char2_tab,
-  chart3_tab
+  chart3_tab,
+  conclusion_tab
 )
 
 
