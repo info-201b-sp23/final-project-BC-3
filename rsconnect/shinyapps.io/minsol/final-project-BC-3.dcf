@@ -5,9 +5,9 @@ account: minsol
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9220656
-bundleId: 7285503
+bundleId: 7290044
 url: https://minsol.shinyapps.io/final-project-BC-3/
-when: 1685521236.37812
-lastSyncTime: 1685521236.37814
+when: 1685595558.77277
+lastSyncTime: 1685595558.7728
 asMultiple: FALSE
 asStatic: FALSE

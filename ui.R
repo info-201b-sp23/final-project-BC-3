@@ -6,6 +6,7 @@ library(shiny)
 library(ggplot2)
 library(plotly)
 
+
 df <- read.csv("depression_anxiety_data.csv")
 
 mean_of_each_score <- df %>% 
@@ -17,8 +18,10 @@ mean_of_each_score <- df %>%
                names_to = "type_of_scores",
                values_to = "amount") 
 
+
 intro_tab <- tabPanel("Information",
-                      h1("Introduction")
+                      h1("Introduction"),
+                      img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center")
 )
 
 
@@ -66,7 +69,7 @@ char2_mainpanel <- mainPanel(
     GAD score, and PHQ scores are positively related to each other.")
 )
 
-char2_tab <- tabPanel("Graph2",
+char2_tab <- tabPanel("Epworth, GAD, PHQ Scores",
                       h2("Average Epworth, GAD, PHQ Scores for Each School Year"),
                       char2_sidepanel,
                       char2_mainpanel
@@ -75,7 +78,7 @@ char2_tab <- tabPanel("Graph2",
   
 
 ui <- navbarPage(
-  "BC-3 Final: Depression & Anxiety",
+  "Depression Demogrphic of college students",
   intro_tab,
   char2_tab
 )
