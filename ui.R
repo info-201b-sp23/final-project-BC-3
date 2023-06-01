@@ -24,6 +24,38 @@ intro_tab <- tabPanel("Information",
                       img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center")
 )
 
+# Create a selectInput widget for selecting gender
+gender_widget <-
+  selectInput(
+    inputId = "gender",
+    label = "Select gender",
+    choices = df$gender,
+    selectize = TRUE,
+    multiple = TRUE,
+    selected = "male"
+  )
+
+chart1_main_panel <- mainPanel(
+  plotlyOutput(outputId = "chart1"),
+  br(),
+  p("This chart shows the relation between gender and depression severity that was observed in University of Lahore."),
+  h4("Purpose: "),
+  p("This chart is used to analyze how does gender affect depression severity and analyze whether female or male has higher depression. Bar chart is also used to make it easier to visualize the data and make a comparison between female and male depression severity"),
+  h4("Insights: "),
+  p("From the chart above, we can see that there are 6 different levels of depression severity, including ‘Mild’, ‘Moderate’, ‘Moderately severe’, ‘none’, ‘None-minimal’, and ‘Severe’. By analyzing the chart above, I discovered that in general, female experiences more depression than male. We can see from the chart that there are higher number of female, which is 194, compare to male, which is 150, who experience mild depression. There are also more female , which is 86, compare to male, which is 54, who experience moderate depression. On the other hand, there are more male, which is 137, than female, which is 89, who experience none to minimal depression. There are also more male, which is 11, compare to female, which is 4, who don’t experience depression at all. This emphasizes that in general, female experiences higher depression severity compare to man.")
+)
+
+# Combine sidebar panel and main panel
+chart1_tab <- tabPanel(
+  # Title of the tab
+  "Chart 1",
+  h1("Relation of gender with depression severity", align="center"),
+  sidebarLayout(
+    sidebarPanel(
+      gender_widget),
+    chart1_main_panel
+  )
+)
 
 char2_sidepanel <- sidebarPanel(
   h3("Options for graph"),
@@ -75,10 +107,10 @@ char2_tab <- tabPanel("Epworth, GAD, PHQ Scores",
                       char2_mainpanel
 )
                       
-  
 
 ui <- navbarPage(
   "Depression Demogrphic of college students",
   intro_tab,
+  chart1_tab,
   char2_tab
 )

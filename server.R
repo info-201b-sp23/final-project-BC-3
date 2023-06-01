@@ -9,7 +9,21 @@ df <- read.csv("depression_anxiety_data.csv")
 
 
 server <- function(input, output) {
-  
+  output$chart1 <- renderPlotly({
+    
+    # Get the frequency of each depression severity of both female and male
+    frequency <- df %>% 
+      group_by(depression_severity, gender) %>% 
+      summarize(count = n()) %>% 
+      filter(gender %in% input$gender)
+    
+    # Plot chart of gender vs depression severity
+    chart1 <- ggplot(data = frequency, aes(x = depression_severity, y = count, fill = gender)) +
+      geom_bar(stat = "identity", position = position_dodge(), alpha = 0.75) +
+      labs(title = "Gender vs. Depression Severity", x = "Depression Severity", y = "Frequency", color = "Gender")
+    
+    return(chart1)
+  })
   
   output$char2 <- renderPlotly({
 
