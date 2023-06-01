@@ -31,7 +31,7 @@ my_theme <- bs_theme(
 
 
 Intro_tab <- tabPanel("Introduction",
-                      h1("Depression Demogrphic of college students", id = "1"),
+                      h1("Depression Demogrphic of college students", align="center", id = "1"),
                       img(src = "Early-Warning-Signs.png", height = '500px', width = '900px', align = "center"),
                       h3("Introduction", id = "introduction"),
                       p("1. Does the severity of depression vary based on demographic on gender?", align = "center", id = "q1"),
