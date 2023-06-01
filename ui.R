@@ -48,7 +48,7 @@ chart1_main_panel <- mainPanel(
 # Combine sidebar panel and main panel
 chart1_tab <- tabPanel(
   # Title of the tab
-  "Chart 1",
+  "Gender & Depression Severity",
   h1("Relation of gender with depression severity", align="center"),
   sidebarLayout(
     sidebarPanel(
